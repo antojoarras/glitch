@@ -1,0 +1,250 @@
+:root {
+  --primary: #f7f7f7;
+  --secondary: #dddddd;
+  --tertiery: #393e46;
+  --tertiery-accent: #484d57;
+  --quaternary: #929aab;
+}
+
+body,
+html,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--tertiery);
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+#decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75vw;
+  height: 100vh;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid var(--tertiery-accent);
+  position: absolute;
+  opacity: 0.4; /* buffed it */
+  transform: rotate(calc(360deg * var(--start-angle))) scale(var(--size));
+  animation: float 10s ease-in-out infinite,
+    spin var(--spin-speed) linear infinite;
+}
+
+.triangle:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  --start-angle: 0.1;
+  --spin-speed: 8s;
+  --size: 0.5;
+}
+
+.triangle:nth-child(2) {
+  top: 50%;
+  left: 10%;
+  --start-angle: 0.2;
+  --spin-speed: 12s;
+  --size: 0.8;
+}
+
+.triangle:nth-child(3) {
+  top: 30%;
+  left: 70%;
+  --start-angle: 0.5;
+  --spin-speed: 10s;
+  --size: 0.6;
+}
+
+.triangle:nth-child(4) {
+  top: 80%;
+  left: 40%;
+  --start-angle: 0.7;
+  --spin-speed: 15s;
+  --size: 0.5;
+}
+
+.triangle:nth-child(5) {
+  top: 60%;
+  left: 80%;
+  --start-angle: 0.4;
+  --spin-speed: 9s;
+  --size: 0.7;
+}
+
+.triangle:nth-child(6) {
+  top: 50%;
+  left: 50%;
+  --start-angle: 0.3;
+  --spin-speed: 7s;
+  --size: 0.9;
+}
+
+.triangle:nth-child(7) {
+  top: 20%;
+  left: 50%;
+  --start-angle: 0.8;
+  --spin-speed: 4s;
+  --size: 0.4;
+}
+
+.triangle:nth-child(8) {
+  top: 10%;
+  left: 70%;
+  --start-angle: 0.5;
+  --spin-speed: 2s;
+  --size: 0.7;
+}
+
+.triangle:nth-child(9) {
+  top: 30%;
+  left: 20%;
+  --start-angle: 0.5;
+  --spin-speed: 2s;
+  --size: 0.5;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(calc(360deg * var(--start-angle)))
+      scale(var(--size));
+  }
+  50% {
+    transform: translateY(-20px) rotate(calc(360deg * var(--start-angle)))
+      scale(var(--size));
+  }
+  100% {
+    transform: translateY(0) rotate(calc(360deg * var(--start-angle)))
+      scale(var(--size));
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(var(--size));
+  }
+  to {
+    transform: rotate(360deg) scale(var(--size));
+  }
+}
+
+#mainMenu {
+  background-color: var(--secondary);
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#gameName {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: var(--quaternary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+}
+
+#gameName .main {
+  font-family: "Ribeye Marrow", serif;
+  font-size: 48px;
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+#gameName .left {
+  margin-right: auto;
+  color: white;
+}
+
+#gameName .right {
+  margin-left: auto;
+  color: black;
+}
+
+#gameName .sub {
+  font-size: 24px;
+  color: var(--secondary);
+}
+
+#loadGames {
+  display: block;
+  max-width: fit-content;
+  margin: auto auto;
+}
+
+.mainMenuButton {
+  display: block;
+  width: 80%;
+  height: 75px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: var(--tertiery);
+  border: none;
+  color: var(--primary);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.6s ease, box-shadow 0.3s ease;
+}
+
+.mainMenuButton:hover {
+  background-color: var(--tertiery-accent);
+  box-shadow: 0 0 15px var(--quaternary);
+}
+
+.mainMenuButton:active {
+  transform: scale(0.98);
+}
+
+/*#inventoryDisplay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }*/
+
+.circular-btn {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.circular-btn:hover {
+  background-color: #f39c12;
+}

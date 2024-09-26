@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta property="og:title" content="Light and Dark" />
+    <meta property="og:description" content="Light and Dark is a game where you start as a lone player, delving into the dungeons looking for loot, kill monsters and travel through levels to gain more coins and reach the final level!" />
+    <!--meta property="og:image" content="https://cdn.glitch.global/85f89f01-93d6-44e6-9b66-90783e826293/idk.jpeg?v=1727105438492" /-->
+    <meta property="og:type" content="website" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Light and Dark</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ribeye+Marrow&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <!--script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script-->
+  </head>
+  <body>
+    <div id="mainMenu">
+      <div id="gameName">
+        <div class="main left">LIGHT</div>
+        <div class="sub">and</div>
+        <div class="main right">DARK</div>
+      </div>
+      <button class="mainMenuButton" id="newGame">NEW GAME</button>
+      <button class="mainMenuButton" id="loadGame">LOAD GAME</button>
+      <button class="mainMenuButton" id="help">HELP</button>
+      <button class="mainMenuButton" id="aboutUs">ABOUT US</button>
+      <button class="mainMenuButton" id="joinDiscord">OUR DISCORD</button>
+    </div>
+    <div id="decor">
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+    </div>
+    <div id="loadGames">
+      <div id="main">
+        Load saved games!
+      </div>
+      <div class="savedGame">
+        <div class="savedText">
+          Game 1
+        </div>
+        <button id="savedButton">
+          Continue!
+        </button>
+      </div>
+    </div>
+    <div id="gameArea">
+      <canvas id="gameCanvas"></canvas>
+      <!--div id="inventoryDisplay"></div-->
+    </div>
+  </body>
+</html>
